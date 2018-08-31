@@ -10,7 +10,7 @@ import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
 
 // @material-ui/icons
-import { Apps, CloudDownload } from "@material-ui/icons";
+import { Contacts, DirectionsRun, Home, Info } from "@material-ui/icons";
 
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
@@ -23,25 +23,46 @@ function HeaderLinks({ ...props }) {
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
+        <Button
+          href="https://www.creative-tim.com/product/material-kit-react"
+          color="transparent"
+          className={classes.navLink}
+        >
+          <Home className={classes.icons} /> หน้าหลัก
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
-          buttonText="Components"
+          buttonText="หัวข้อการศึกษา"
           buttonProps={{
             className: classes.navLink,
             color: "transparent"
           }}
-          buttonIcon={Apps}
+          buttonIcon={Info}
           dropdownList={[
             <Link to="/" className={classes.dropdownLink}>
-              All components
+              ประวัติศาสตร์/เหตุการณ์สำคัญในอดีต
             </Link>,
-            <a
-              href="https://creativetimofficial.github.io/material-kit-react/#/documentation"
-              target="_blank"
-              className={classes.dropdownLink}
-            >
-              Documentation
-            </a>
+            <Link to="/" className={classes.dropdownLink}>
+              ประเพณี
+            </Link>,
+            <Link to="/" className={classes.dropdownLink}>
+              อาหาร
+            </Link>,
+            <Link to="/" className={classes.dropdownLink}>
+              วัฒนธรรมทางภาษาและวรรณกรรม
+            </Link>,
+            <Link to="/" className={classes.dropdownLink}>
+              สถานที่
+            </Link>
+            // <a
+            //   href="https://creativetimofficial.github.io/material-kit-react/#/documentation"
+            //   target="_blank"
+            //   className={classes.dropdownLink}
+            // >
+            //   Documentation
+            // </a>
           ]}
         />
       </ListItem>
@@ -52,59 +73,18 @@ function HeaderLinks({ ...props }) {
           target="_blank"
           className={classes.navLink}
         >
-          <CloudDownload className={classes.icons} /> Download
+          <DirectionsRun className={classes.icons} /> กิจกรรมในห้องเรียน
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-twitter"
-          title="Follow us on twitter"
-          placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
+        <Button
+          href="https://www.creative-tim.com/product/material-kit-react"
+          color="transparent"
+          target="_blank"
+          className={classes.navLink}
         >
-          <Button
-            href="https://twitter.com/CreativeTim"
-            target="_blank"
-            color="transparent"
-            className={classes.navLink}
-          >
-            <i className={classes.socialIcons + " fab fa-twitter"} />
-          </Button>
-        </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-facebook"
-          title="Follow us on facebook"
-          placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            color="transparent"
-            href="https://www.facebook.com/CreativeTim"
-            target="_blank"
-            className={classes.navLink}
-          >
-            <i className={classes.socialIcons + " fab fa-facebook"} />
-          </Button>
-        </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-tooltip"
-          title="Follow us on instagram"
-          placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            color="transparent"
-            href="https://www.instagram.com/CreativeTimOfficial"
-            target="_blank"
-            className={classes.navLink}
-          >
-            <i className={classes.socialIcons + " fab fa-instagram"} />
-          </Button>
-        </Tooltip>
+          <Contacts className={classes.icons} /> ติดต่อเรา
+        </Button>
       </ListItem>
     </List>
   );
